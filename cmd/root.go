@@ -18,6 +18,7 @@ import (
 	"github.com/spf13/viper"
 	"io"
 	"os"
+	"runtime"
 	"strings"
 )
 
@@ -159,7 +160,9 @@ func init() {
 
 	// Add Commands
 	rootCmd.AddCommand(statusCmd)
-	rootCmd.AddCommand(node.NodeCmd)
+	if runtime.GOOS != "windows" {
+		rootCmd.AddCommand(node.Cmd)
+	}
 }
 
 // Execute executes the root command.
