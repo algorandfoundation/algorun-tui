@@ -3,10 +3,11 @@ package configure
 import (
 	"bytes"
 	"fmt"
-	"github.com/algorandfoundation/algorun-tui/cmd/utils/explanations"
-	"github.com/algorandfoundation/algorun-tui/internal/algod"
-	"github.com/algorandfoundation/algorun-tui/internal/algod/utils"
-	"github.com/algorandfoundation/algorun-tui/ui/style"
+	"github.com/algorandfoundation/nodekit/internal/algod"
+	"github.com/algorandfoundation/nodekit/ui/style"
+
+	"github.com/algorandfoundation/nodekit/cmd/utils/explanations"
+	"github.com/algorandfoundation/nodekit/internal/algod/utils"
 	"github.com/charmbracelet/lipgloss"
 	"os"
 	"os/exec"

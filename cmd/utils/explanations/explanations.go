@@ -1,7 +1,7 @@
 package explanations
 
 import (
-	"github.com/algorandfoundation/algorun-tui/ui/style"
+	"github.com/algorandfoundation/nodekit/ui/style"
 	"github.com/charmbracelet/lipgloss"
 )
 
@@ -10,7 +10,7 @@ var NodeNotFound = lipgloss.JoinHorizontal(lipgloss.Left,
 	style.Cyan.Render("Explanation"),
 	style.Bold(": "),
 ) +
-	"algorun could not find your node automatically. (ensure the node is running)\n\n" +
+	"nodekit could not find your node automatically. (ensure the node is running)\n\n" +
 	lipgloss.JoinHorizontal(lipgloss.Left,
 		"Provide ",
 		style.Bold("--datadir"),
@@ -27,4 +27,4 @@ var Unreachable = "Explanation: Could not reach algod. Check that algod is runni
 var TokenInvalid = "Explanation: algod token is invalid. Algorun requires the " + style.BoldUnderline("admin token") + " for algod. You can find this in the algod.admin.token file in the algod data directory.\n"
 
 // TokenNotAdmin is an explanatory message shown when the provided token lacks admin privileges for the algod node.
-var TokenNotAdmin = "Explanation: algorun requires the " + style.BoldUnderline("admin token") + " for algod. You can find this in the algod.admin.token file in the algod data directory.\n"
+var TokenNotAdmin = "Explanation: nodekit requires the " + style.BoldUnderline("admin token") + " for algod. You can find this in the algod.admin.token file in the algod data directory.\n"

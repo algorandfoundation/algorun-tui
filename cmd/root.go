@@ -2,15 +2,15 @@ package cmd
 
 import (
 	"context"
-	"github.com/algorandfoundation/algorun-tui/api"
-	"github.com/algorandfoundation/algorun-tui/cmd/catchup"
-	"github.com/algorandfoundation/algorun-tui/cmd/configure"
-	"github.com/algorandfoundation/algorun-tui/cmd/utils"
-	"github.com/algorandfoundation/algorun-tui/cmd/utils/explanations"
-	"github.com/algorandfoundation/algorun-tui/internal/algod"
-	"github.com/algorandfoundation/algorun-tui/internal/system"
-	"github.com/algorandfoundation/algorun-tui/ui"
-	"github.com/algorandfoundation/algorun-tui/ui/style"
+	"github.com/algorandfoundation/nodekit/api"
+	"github.com/algorandfoundation/nodekit/cmd/catchup"
+	"github.com/algorandfoundation/nodekit/cmd/configure"
+	"github.com/algorandfoundation/nodekit/cmd/utils"
+	"github.com/algorandfoundation/nodekit/cmd/utils/explanations"
+	"github.com/algorandfoundation/nodekit/internal/algod"
+	"github.com/algorandfoundation/nodekit/internal/system"
+	"github.com/algorandfoundation/nodekit/ui"
+	"github.com/algorandfoundation/nodekit/ui/style"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/charmbracelet/log"
@@ -44,7 +44,7 @@ var (
 	)
 	// rootCmd is the primary command for managing Algorand nodes, providing CLI functionality and TUI for interaction.
 	rootCmd = utils.WithAlgodFlags(&cobra.Command{
-		Use:     "algorun",
+		Use:     "nodekit",
 		Version: Version,
 		Short:   short,
 		Long:    long,
