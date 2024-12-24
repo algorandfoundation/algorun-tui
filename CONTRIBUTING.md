@@ -1,19 +1,19 @@
 # 🫂 Contributing Guide
 
-A guide on how to contribute to this project.
+A guide on how to contribute to this project. Assumes you have git and go configured locally
 
 # Building
 
 Clone the project
 
 ```bash
-git clone git@github.com:algorandfoundation/algorun-tui.git
+git clone git@github.com:algorandfoundation/nodekit.git
 ```
 
 Change to the directory
 
 ```bash
-cd algorun-tui
+cd nodekit
 ```
 
 Build the project
@@ -22,44 +22,23 @@ Build the project
 make build
 ```
 
-Optionally, run a sandboxed participation node
-
-
-```bash
-docker compose up
-```
-
-Create a configuration file for the participation node in the root directory of the project (.algorun.yaml)
-
-```yaml
-algod-endpoint: http://localhost:8080
-algod-token: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-```
-
 Launch the TUI
 
-
-> [!NOTE]
-> If you skipped the docker container or config file, try running `./bin/algorun` standalone, 
-> which will detect your algorand data directory from the `ALGORAND_DATA` environment variable that works for `goal`. 
-> Otherwise, provide the `--algod-endpoint` and `--algod-token` arguments so that it can find your node. 
-> Note that algorun requires the admin algod token.
-
 ```bash
-./bin/algorun
+./bin/nodekit
 ```
 
 # 📂 Folder Structure
 
 ```bash
-├── api        # Generated API Client
+├── api        # Generated API Client and HTTPPkg methods
 ├── cmd        # Command Controller
-├── internal   # Data Models/Fetch Wrappers
+├── internal   # Data Models/Fetch Wrappers/Tools/Utilities
 └── ui         # BubbleTea Interfaces
 ```
 
 There are three top level modules (**cmd**, **internal**, **ui**) which align with the GoLang/Charm ecosystem.
-There is an additional code-generated module called **api** which should not be edited by hand.
+There is an additional code-generated file called **api/lf.go** which should not be edited by hand.
 See [generating rpc package](#generating-rpc-package) for more information
 
 All submodules and endpoints **SHOULD** align with the command/ui namespaces.
@@ -67,7 +46,7 @@ All submodules and endpoints **SHOULD** align with the command/ui namespaces.
 Example Command:
 
 ```bash
-algorun status
+nodekit status
 ```
 
 Example Structure
